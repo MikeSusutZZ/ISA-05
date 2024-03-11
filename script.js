@@ -1,7 +1,7 @@
 //CHAT GPT WAS USED ON THIS ASSIGNMENT
 // Constants for strings used in the HTML content
 const PAGE_TITLE = "SQL Query Executor";
-const WELCOME_MESSAGE = "Enter your SQL query below.";
+const WELCOME_MESSAGE = "Enter your SQL query below. ex: select * from patient";
 const TEXTAREA_PLACEHOLDER = "Enter SQL query (SELECT or INSERT only)";
 const SUBMIT_BUTTON_TEXT = "Submit Query";
 const API_URL = "https://comp4537-lab-5.vercel.app/api/sql";
@@ -106,7 +106,10 @@ class ContentGenerator {
             this.displayResponse('An error occurred. Please check the console.');
         }
     }
-
+    /**
+     * This button was added because the front end already covers for people sending
+     * the wrong type of input, so this button bypasses it and shows the error
+     */
     async handleDropTest() {
         console.log("drop attempted")
         const dropCommand = "DROP TABLE patient"; // Example command, adjust based on your needs
